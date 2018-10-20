@@ -1,0 +1,2 @@
+class Taiketsu < ApplicationRecord
+end
