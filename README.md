@@ -14,7 +14,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |topic|string|null: false|
-|taiketsu_id|string|null: false|
+|taiketsu_id|integer|null: false|
 
 ### Association
 - belongs_to :taiketsu
