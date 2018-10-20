@@ -1,0 +1,95 @@
+.header {
+    height: 570px;
+    width: 100%;
+    background: url(tyuusyou.jpeg);
+    background-size: cover;
+    &__top {
+        padding: 80px 0 100px;
+        &--name {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            .toppage {
+                height:75px;
+                width:320px;
+                margin: 0 auto;
+                background-image: url(taiketsu.jpg);
+                background-repeat: no-repeat;
+                color: $white;
+                display: block;
+                text-decoration: none;
+                text-indent: -500em;
+            }
+        }
+    }
+    &__middle {
+        padding: 0 10px;
+        margin: 0 auto;
+        &--sentence {
+            font-size: 20px;
+            color: $white;
+            text-align: center;
+            line-height: 30px;
+            padding-bottom: 20px;
+        }
+        &--button {
+            width: 200px;
+            margin: 0 auto;
+            .btn {
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: none;
+                display: block;
+                text-align: center;
+                padding: 10px 0 10px;
+                color: $white;
+                background-color: #81b3ab;
+                border-radius: 25px;
+                transition: background-color .4s ease;
+            }
+            .btn:hover {
+                background-color: #339999;
+                -ms-transform: translateY(5px);
+                -webkit-transform: translateY(5px);
+                transform: translateY(5px);
+                border-bottom: none;
+                box-shadow: none;
+            }
+        }
+    }
+    &__bottom {
+        padding-top: 20px;
+        display: flex;
+        &--links {
+            margin: 0 auto;
+            .list {
+                display: inline-block;
+                padding: 30px 40px;
+                .icon {
+                    font-size: 20px;
+                    color: $white;
+                    text-decoration: none;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
+                    border-radius: 50%;
+                    border: solid 1px $white;
+                    text-align: center;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    font-weight: bold;
+                    font-family: FontAwesome;
+                    transition: background-color .4s ease;
+                }
+                .icon:hover {
+                    background-color: $white;
+                    display: inline-block;
+                    background: #fff;
+                    color: #333;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

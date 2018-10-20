@@ -1,0 +1,26 @@
+.global-footer {
+    width: 100%;
+    height: 60px;
+    background-color: #222222;
+    display: flex;
+    line-height: 60px;
+    &__contents {
+        display: flex;
+        margin: 0 auto;
+        width: 600px;
+        .list {
+            padding-left: 20px;
+            padding-right: 35px; 
+            font-size: 12px;
+            .link {
+                text-decoration: none;
+                color: $globalFooterGray;
+            }
+        }
+    }
+    &__right {
+        color: $globalFooterGray;
+        font-size: 12px;
+        padding-right: 300px;
+    }
+}

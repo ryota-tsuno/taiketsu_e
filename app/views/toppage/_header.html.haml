@@ -1,0 +1,22 @@
+.header
+    .header__top
+        %h1.header__top--name
+            = link_to "タイケツ", root_path, class: "toppage"
+    .header__middle
+        %p.header__middle--sentence
+            いつも宿敵、ライバルとして憎み合い、争う合う二人。
+            %br/
+            たまには言いたいことを遠慮なく吐き出してみませんか？
+        %p.header__middle--button
+            = link_to "もっと詳しく", root_path, class: "btn"
+    .header__bottom
+        %ul.header__bottom--links
+            %li.list
+                = link_to "https://www.facebook.com/" do
+                    = fa_icon "facebook", class: "icon"
+            %li.list
+                = link_to "https://twitter.com/" do
+                    = fa_icon "twitter", class: "icon"
+            %li.list
+                = link_to "http://b.hatena.ne.jp/" do
+                    = fa_icon "bold", class: "icon"
