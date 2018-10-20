@@ -1,0 +1,2 @@
+class TaiketsusController < ApplicationController
+end
