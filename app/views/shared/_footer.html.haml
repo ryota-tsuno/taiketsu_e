@@ -1,17 +1,19 @@
-.footer
-    .footer__title
-        お題を投稿する
-    .footer__sentence
-        ライバル関係にある2つのことがらを投稿してみてください。
-    .footer__form
-        .footer__form--input
-            .footer__form--input__left
-                %input{maxlengt: "50", name: "cast_primary", type: "text", class: "form"}/
-            .footer__form--input__VS
-                VS
-            .footer__form--input__right
-                %input{maxlengt: "50", name: "cast_primary", type: "text", class: "form"}/
-        .footer__form--btn
-            %input{name: "commit", type: "submit", value: "投稿する", class: "btn"}/
-        .footer__form--sentence
-            ＊投稿できるお題は各50文字以内ですよ
+.calss
+= form_for @taiketsu do |f|
+    .footer
+        .footer__title
+            お題を投稿する
+        .footer__sentence
+            ライバル関係にある2つのことがらを投稿してみてください。
+        .footer__form
+            .footer__form--input
+                .footer__form--input__left
+                    = f.text_field  :topics, maxlength: "50", name: "cast_primary", type: "text", class: "form"
+                .footer__form--input__VS
+                    VS
+                .footer__form--input__right
+                    = f.text_field  :topics, maxlength: "50", name: "cast_primary", type: "text", class: "form"
+            .footer__form--btn
+                =f.submit "投稿する", class: "btn"
+            .footer__form--sentence
+                ＊投稿できるお題は各50文字以内ですよ

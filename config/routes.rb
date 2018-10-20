@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root "topics#index"
-  resources :topics
+  root "taiketsus#index"
+  resources :taiketsus , only: [:index, :show, :create] do
+    resources :topics
+  end
 end
