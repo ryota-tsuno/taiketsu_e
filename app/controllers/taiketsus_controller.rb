@@ -1,17 +1,16 @@
 class TaiketsusController < ApplicationController
+  before_action :set_taiketsu, only: [:show]
 
     def index
       @taiketsu = Taiketsu.new
-      @topic = Topic.new(topic_params)
     end
 
     def show
-      @topic = Topic.new(topic_params)
     end
 
     def create
-      @topic = Topic.new(topic_params)
-      if @topic.save
+      @taiketsu = Taiketsu.new(taiketsu_params)
+      if @taiketsu.save
         redirect_to taiketsu
       else
         render :index
@@ -20,7 +19,14 @@ class TaiketsusController < ApplicationController
 
     private
 
-    def topic_params
+    def set_taiketsu
+      @taiketsu = Taiketsu.find(params[:id])
+    end
+
+    def taiketsu_params
+      params.require(:taiketsu).permit(
+        topics: [:topic, :id]
+      )
     end
 
 end
