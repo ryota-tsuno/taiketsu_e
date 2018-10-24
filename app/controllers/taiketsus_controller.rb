@@ -2,8 +2,8 @@ class TaiketsusController < ApplicationController
   before_action :set_taiketsu, only: [:show]
 
     def index
+      @taiketsus = Taiketsu.order("id").page(params[:page]).per(12)
       @taiketsu = Taiketsu.new
-
       @taiketsu.topics.build
     end
 
