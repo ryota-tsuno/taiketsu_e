@@ -1,0 +1,21 @@
+.pagination-sm {
+    .page-item {
+        padding-left: 5px;
+        padding-right: 5px;
+        .page-link {
+            height: 30px;
+            line-height: 24px;
+            border: none;
+            background: #eee;
+            font-size: 1.25rem;
+            color: #aaa;
+            border-radius: 15%;
+            transition: background-color ease;
+            transition: color ease;
+        }
+        .page-link:hover {
+            background-color: #347299;
+            color: $white;
+        }
+    }
+}

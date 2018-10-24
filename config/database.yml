@@ -52,3 +52,4 @@ production:
   database: taiketsu_e_production
   username: taiketsu_e
   password: <%= ENV['TAIKETSU_E_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
