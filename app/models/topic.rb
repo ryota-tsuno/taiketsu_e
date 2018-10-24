@@ -1,3 +1,3 @@
 class Topic < ApplicationRecord
-    belongs_to :taiketsu
+  belongs_to  :taiketsu, optional: true
 end

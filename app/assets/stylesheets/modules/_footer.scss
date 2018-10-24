@@ -22,7 +22,7 @@
         padding-top: 20px;
         &--input {
             display: flex;
-            &__left {
+            &__text {
                 width: 500px;
                 height: 100%;
                 .form {
@@ -39,15 +39,6 @@
                 text-align: center;
                 line-height: 36px;
                 height: 30px;
-            }
-            &__right {
-                width: 500px;
-                height: 100%;
-                .form {
-                    height: 30px;
-                    width: 350px;
-                    background: none;
-                }
             }
         }
         &--btn {
