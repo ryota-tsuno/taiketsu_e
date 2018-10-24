@@ -98,11 +98,10 @@
                 .main__posts--list__vote
                     28点 / 24点
     .kaminari
-        << 1 2 3 4 5 >>
-        -# renderする
+        = paginate @topics
     .main__name--bottom
         ご意見募集中のお題
-    .main__posts--bottom
+    .main__posts
         .main__posts--list
             = link_to "https://www.facebook.com/", class: "link" do
                 .main__posts--list__title
