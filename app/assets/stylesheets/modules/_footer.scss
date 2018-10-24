@@ -22,6 +22,11 @@
         padding-top: 20px;
         &--input {
             display: flex;
+            input {
+                color: $white;
+                font-size:12px;
+            }
+            // 入力テキストを白色に
             &__left {
                 width: 500px;
                 height: 100%;
