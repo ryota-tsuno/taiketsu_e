@@ -12,6 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20181022065948) do
 
+  create_table "taiketsus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "topic",       null: false
     t.integer  "taiketsu_id", null: false

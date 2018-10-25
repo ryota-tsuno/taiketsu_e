@@ -3,15 +3,17 @@
         お題を投稿する
     .footer__sentence
         ライバル関係にある2つのことがらを投稿してみてください。
-    .footer__form
-        .footer__form--input
-            .footer__form--input__left
-                %input{maxlengt: "50", name: "cast_primary", type: "text", class: "form"}/
-            .footer__form--input__VS
-                VS
-            .footer__form--input__right
-                %input{maxlengt: "50", name: "cast_primary", type: "text", class: "form"}/
-        .footer__form--btn
-            %input{name: "commit", type: "submit", value: "投稿する", class: "btn"}/
-        .footer__form--sentence
-            ＊投稿できるお題は各50文字以内ですよ
+    = form_for @taiketsu do |f|
+        .footer__form
+            .footer__form--input
+                - 2.times do |i|
+                    = f.fields_for :topics do |topic|
+                        .footer__form--input__text
+                            = topic.text_field :topic, maxlength: "50", class: "form"
+                    - if i == 0
+                        .footer__form--input__VS
+                            VS
+            .footer__form--btn
+                = f.submit "投稿する", class: "btn"
+            .footer__form--sentence
+                ＊投稿できるお題は各50文字以内ですよ
