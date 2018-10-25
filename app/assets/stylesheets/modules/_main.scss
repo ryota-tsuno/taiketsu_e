@@ -3,7 +3,7 @@
     width: 100%;
     background: #EEEEEE;
     min-width: 840px;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
     &__name--top {
         text-align: center;
         padding: 30px 0 20px;
@@ -48,7 +48,7 @@
             }
             &__vote {
                 height: 10px;
-                padding-top: 10px; 
+                padding-top: 10px;
                 margin: 0 auto;
             }
         }
@@ -57,7 +57,7 @@
         font-size: 20px;
         margin: 0 auto;
         width: 300px;
-        padding: 50px 0;
+        padding: 50px 0 10px 0;
         clear: both;
     }
     &__name--bottom {
