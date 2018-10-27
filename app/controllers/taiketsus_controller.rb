@@ -2,7 +2,7 @@ class TaiketsusController < ApplicationController
   before_action :set_taiketsu, only: [:show]
 
     def index
-      @taiketsus = Taiketsu.order("id").page(params[:page]).per(12)
+      @taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(12).order("id")
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
