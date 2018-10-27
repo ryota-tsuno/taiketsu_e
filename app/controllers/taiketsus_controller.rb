@@ -3,11 +3,13 @@ class TaiketsusController < ApplicationController
 
     def index
       @taiketsus = Taiketsu.order("id").page(params[:page]).per(12)
+      @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
     end
 
     def show
+      # @comments = @topic.comments 
     end
 
     def create
@@ -21,8 +23,8 @@ class TaiketsusController < ApplicationController
 
   private
 
-    def set_topic
-      @topic = Topic.find(params[:id])
+    def set_taiketsu
+      @taiketsu = Taiketsu.find(params[:id])
     end
 
     def taiketsu_params

@@ -1,165 +1,31 @@
 .main
-    .main__name--top
-        人気のお題
+  .main__name--top
+    人気のお題
     .main__posts
+      - @taiketsus.each do |taiketsu|
         .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    野村さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    ラオス
-                .main__posts--list__vote
-                    28点 / 24点
-                /rubyとかで埋め込むつもり
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    日本
-                .VS
-                    VS
-                .main__posts--list__title
-                    山本さん
-                .main__posts--list__vote
-                    28点 / 24点
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    セネガル
-                .VS
-                    VS
-                .main__posts--list__title
-                    鈴木さん
-                .main__posts--list__vote
-                    28点 / 24点
-    .main__posts
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    小川さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    イタリア
-                .main__posts--list__vote
-                    28点 / 24点
-                /rubyとかで埋め込むつもり
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    日本
-                .VS
-                    VS
-                .main__posts--list__title
-                    山本さん
-                .main__posts--list__vote
-                    28点 / 24点
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    セネガル
-                .VS
-                    VS
-                .main__posts--list__title
-                    鈴木さん
-                .main__posts--list__vote
-                    28点 / 24点
-    .main__posts
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    小川さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    イタリア
-                .main__posts--list__vote
-                    28点 / 24点
-                /rubyとかで埋め込むつもり
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    日本
-                .VS
-                    VS
-                .main__posts--list__title
-                    山本さん
-                .main__posts--list__vote
-                    28点 / 24点
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    セネガル
-                .VS
-                    VS
-                .main__posts--list__title
-                    鈴木さん
-                .main__posts--list__vote
-                    28点 / 24点
+          = link_to taiketsu_path(taiketsu.id), class: "link" do
+            .main__posts--list__title
+              = taiketsu.topics.first.topic
+            .VS
+              VS
+            .main__posts--list__title
+              = taiketsu.topics.second.topic
+            .main__posts--list__vote
+              23/45
     .kaminari
-        = paginate @taiketsus
+      = paginate @taiketsus
     .main__name--bottom
-        ご意見募集中のお題
+    ご意見募集中のお題
     .main__posts
+      - @accepting_taiketsus.each do |accepting_taiketsu|
         .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    大丸さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    南アフリカ
-                .main__posts--list__vote
-                    28点 / 24点
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    小川さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    山本さん
-                .main__posts--list__vote
-                    28歳 / 24歳
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    小川さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    山本さん
-                .main__posts--list__vote
-                    28歳 / 24歳
-    .main__posts
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    大丸さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    南アフリカ
-                .main__posts--list__vote
-                    28点 / 24点
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    小川さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    山本さん
-                .main__posts--list__vote
-                    28歳 / 24歳
-        .main__posts--list
-            = link_to "https://www.facebook.com/", class: "link" do
-                .main__posts--list__title
-                    小川さん
-                .VS
-                    VS
-                .main__posts--list__title
-                    山本さん
-                .main__posts--list__vote
-                    28歳 / 24歳
+          = link_to taiketsu_path(accepting_taiketsu.id), class: "link" do
+            .main__posts--list__title
+              = accepting_taiketsu.topics.first.topic
+            .VS
+              VS
+            .main__posts--list__title
+              = accepting_taiketsu.topics.second.topic
+            .main__posts--list__vote
+              28点 / 24点
