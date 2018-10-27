@@ -1,33 +1,18 @@
 .main
-    .main__name--top
-        人気のお題
+  .main__name--top
+    人気のお題
     .main__posts
-        - @taiketsus.each do |taiketsu|
-            .main__posts--list
-                = link_to taiketsu_path(taiketsu.id), class: "link" do
-                    .main__posts--list__title
-                        = taiketsu.topics.first.topic
-                    .VS
-                        VS
-                    .main__posts--list__title
-                        = taiketsu.topics.second.topic
-                    .main__posts--list__vote
-                        28点 / 24点
-                /rubyとかで埋め込むつもり
-
-    .kaminari
-        = paginate @taiketsus
-    .main__name--bottom
-        ご意見募集中のお題
-    .main__posts
-        - @accepting_taiketsus.each do |accepting_taiketsu|
-            .main__posts--list
-                = link_to taiketsu_path(accepting_taiketsu.id), class: "link" do
-                    .main__posts--list__title
-                        = accepting_taiketsu.topics.first.topic
-                    .VS
-                        VS
-                    .main__posts--list__title
-                        = accepting_taiketsu.topics.second.topic
-                    .main__posts--list__vote
-                        28点 / 24点
+      - @taiketsus.each do |taiketsu|
+        .main__posts--list
+          = link_to taiketsu_path(taiketsu.id), class: "link" do
+            .main__posts--list__title
+              = taiketsu.topics.first.topic
+            .VS
+              VS
+            .main__posts--list__title
+              = taiketsu.topics.second.topic
+            .main__posts--list__vote
+              28点 / 24点
+  .kaminari
+    = paginate @taiketsus
+  = render "shared/looking-opinion"
