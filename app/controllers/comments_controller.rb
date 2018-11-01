@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+    def index
+        render 'detailpage/comments' 
+    end
 
     def create
         @topicId = Taiketsu.joins(:topic_id).where.not(topic_id: nil)
