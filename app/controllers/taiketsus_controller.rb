@@ -11,6 +11,7 @@ class TaiketsusController < ApplicationController
 
     def show
       @taiketsus = Taiketsu.new
+      @taiketsus.topics.build
       @taiketsu = Taiketsu.find(params[:id])
       @comment = Comment.new
       @comments = Comment.includes(:topic)
