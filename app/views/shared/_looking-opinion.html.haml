@@ -1,14 +1,14 @@
 .main__name--bottom
-    ご意見募集中のお題
+  ご意見募集中のお題
 .main__posts
-    - @accepting_taiketsus.each do |accepting_taiketsu|
-        .main__posts--list
-            = link_to taiketsu_path(accepting_taiketsu.id), class: "link" do
-                .main__posts--list__title
-                    = accepting_taiketsu.topics.first.topic
-                .VS
-                    VS
-                .main__posts--list__title
-                    = accepting_taiketsu.topics.second.topic
-                .main__posts--list__vote
-                    28点 / 24点
+  - @accepting_taiketsus.each do |accepting_taiketsu|
+    .main__posts--list
+      = link_to taiketsu_path(accepting_taiketsu.id), class: "link" do
+        .main__posts--list__title
+          = accepting_taiketsu.topics.first.topic
+        .VS
+          VS
+        .main__posts--list__title
+          = accepting_taiketsu.topics.second.topic
+        .main__posts--list__vote
+          28点 / 24点
