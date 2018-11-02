@@ -3,22 +3,34 @@ class CommentsController < ApplicationController
         render 'detailpage/comments' 
     end
 
+    def index
+        render './taiketsus/show' 
+    end
+
     def create
-        @topicId = Taiketsu.joins(:topic_id).where.not(topic_id: nil)
-        @comments = Comment.create(text: comment_params[:text], topic_id: comment_params[:topic_id], session_id: request.session_options[:id])
-        binding.pry
-        redirect_to abouts_path
+        @taiketsu = Taiketsu.find(params[:taiketsu_id])
+        @comment = Comment.new(text: comment_params[:text], topic_id: comment_params[:topic_id], session_id: request.session_options[:id])
+        if @comment.save
+          respond_to do |format|
+            format.html { redirect_to taiketsu_path(params[:taiketsu_id]) }
+            format.json
+          end
+        else
+          flash.now[:alert] = 'コメントを入力してください'
+          redirect_to taiketsu_path(params[:taiketsu_id])
+        end
     end
 
     def destroy
-        if @comments == taikestus.session
-            comments.destroy
+        if @session == taikestus.session
+            comment.destroy
         end
     end
 
     private
 
     def comment_params
-        params.permit(:text, :topic_id)
+        params.require(:comment).permit(:text, :topic_id, :taiketsu_id)
     end
+
 end
