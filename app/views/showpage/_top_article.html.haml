@@ -1,0 +1,16 @@
+.row.top_article
+  .columns.large-12.text-center.top_article
+    .panel
+      .row
+        .columns.large-5
+          .top_article_cast
+            = @taiketsu.topics.first.topic
+        .columns.top_article_vs_wrap
+          .top_article_vs
+            vs
+        .columns.large-5.large-offset-2
+          .top_article_cast
+            = @taiketsu.topics.second.topic
+      .row.social
+        .columns.large-8.text-left
+        .columns.large-4.text-right 
