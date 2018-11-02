@@ -9,7 +9,7 @@ class TaiketsusController < ApplicationController
     end
 
     def show
-      # @comments = @topic.comments 
+      # @comments = @topic.comments
     end
 
     def create
