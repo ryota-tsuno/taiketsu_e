@@ -1,2 +1,16 @@
-.wrapper
-    = render "showpage/header"
+%html
+  %body
+    %main
+      = render 'showpage/header'
+      = render 'showpage/adjustlink'       
+      = render 'showpage/top_article' 
+      .row.singlshowpage
+        = render 'showpage/comment_primary'
+        = render 'showpage/comment_secondary'
+      .row
+        .columns.large-12.text-center
+          .small
+            投稿できるご意見は200文字以内です。
+      = render 'shared/looking-opinion'
+      = render 'shared/footer'
+      = render 'shared/global-footer'
