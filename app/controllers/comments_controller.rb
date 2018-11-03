@@ -1,11 +1,6 @@
 class CommentsController < ApplicationController
 
-    def index
-        render './taiketsus/show'
-    end
-
     def create
-        @taiketsu = Taiketsu.find(params[:taiketsu_id])
         @comment = Comment.new(text: comment_params[:text], topic_id: comment_params[:topic_id], session_id: request.session_options[:id])
         if @comment.save
           respond_to do |format|
@@ -15,12 +10,6 @@ class CommentsController < ApplicationController
         else
           flash.now[:alert] = 'コメントを入力してください'
           redirect_to taiketsu_path(params[:taiketsu_id])
-        end
-    end
-
-    def destroy
-        if @session == taikestus.session
-            comment.destroy
         end
     end
 
