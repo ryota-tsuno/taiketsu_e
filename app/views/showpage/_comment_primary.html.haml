@@ -3,10 +3,10 @@
     .row
       .columns.large-12
         %h3
-          %span
+          %span.first
             = @taiketsu.topics.first.topic
           からのご意見
-        
+
     .comment_block
       - @comments.each do |comment|
         .row
