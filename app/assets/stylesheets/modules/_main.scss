@@ -3,11 +3,12 @@
     width: 100%;
     background: #EEEEEE;
     min-width: 840px;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
     &__name--top {
         text-align: center;
         padding: 30px 0 20px;
         font-size: 21px;
+        height: 100px;
     }
     &__posts {
         margin: 0 auto;
@@ -18,7 +19,7 @@
             margin: 10px 8px;
             padding: 10px 25px 25px;
             width: 270px;
-            height: 180px;
+            min-height: 180px;
             min-width: 230px;
             background-color: $white;
             border: 1px solid #ccc;
@@ -32,7 +33,7 @@
             }
             &__title {
                 font-size: 20px;
-                height: 30px;
+                min-height: 30px;
                 line-height: 30px;
             }
             .VS {
