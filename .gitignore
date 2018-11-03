@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+/shared/*
+/releases/*
 # Ignore Byebug command history file.
 .byebug_history
