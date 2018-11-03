@@ -1,10 +1,7 @@
 class CommentsController < ApplicationController
-    def index
-        render 'detailpage/comments' 
-    end
 
     def index
-        render './taiketsus/show' 
+        render './taiketsus/show'
     end
 
     def create
