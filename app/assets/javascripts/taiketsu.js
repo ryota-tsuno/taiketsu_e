@@ -1,13 +1,9 @@
 $(function(){
-  //対象の要素
   var $target = $('.main__posts--list');
-  //要素に指定する色
   var navy = '#1f3748';
   var white = 'white';
   var black = 'black';
-  //アニメーションのスピード
   var speed = 150;
-  //アニメーションのイージング
   var easing = 'linear';
 
   $target.on("mouseover", function(){
