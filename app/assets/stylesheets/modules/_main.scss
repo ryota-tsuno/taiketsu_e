@@ -3,7 +3,7 @@
     width: 100%;
     background: #EEEEEE;
     min-width: 840px;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
     &__name--top {
         text-align: center;
         padding: 30px 0 20px;
@@ -11,24 +11,27 @@
     }
     &__posts {
         margin: 0 auto;
-        width: 840px;
-        height: 140px;
+        width: 858px;
+        height: 210px;
         clear: both;
         &--list {
             margin: 10px 8px;
-            padding: 1em;
-            width: 230px;
+            padding: 10px 25px 25px;
+            width: 270px;
+            height: 180px;
             min-width: 230px;
             background-color: $white;
             border: 1px solid #ccc;
             text-align: center;
             float: left;
+            box-shadow: 0px 0px 3px;
+            border: 1px solid $white;
             .link {
                 text-decoration: none;
                 color: black;
             }
             &__title {
-                font-size: 18px;
+                font-size: 20px;
                 height: 30px;
                 line-height: 30px;
             }
@@ -41,11 +44,11 @@
                 text-align: center;
                 background: #1f3748;
                 color: $white;
-                margin: 10px auto
+                margin: 10px auto;
             }
             &__vote {
                 height: 10px;
-                padding-top: 10px; 
+                padding-top: 10px;
                 margin: 0 auto;
             }
         }
@@ -53,8 +56,8 @@
     .kaminari {
         font-size: 20px;
         margin: 0 auto;
-        width: 150px;
-        padding: 50px 0;
+        width: 300px;
+        padding: 50px 0 10px 0;
         clear: both;
     }
     &__name--bottom {
