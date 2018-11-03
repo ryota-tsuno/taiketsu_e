@@ -7,14 +7,19 @@
             = @taiketsu.topics.second.topic
           からのご意見
 
-    .comment_block
-      .row
-        .columns.large-12
-          %p
-            常に新しいことに挑戦し続け結果を出している優良なメーカーだと思います。
-            %br
-              実際に販売台数がそれを物語っている。
-            ダサいなら売れるわけが無い。売れているということはそれだけそのデザインが受け入れられている証だ。
+    - @comments.each_with_index do |comment, i|
+      - if i % 2 == 0
+        .comment_block.bgc-gray
+          .row
+            .columns.large-12
+              %p
+                = comment.text
+      - else
+        .comment_block.bgc-white
+          .row
+            .columns.large-12
+              %p
+                = comment.text
     = form_for [@taiketsu,@comment], html: {id: 'new_comment'} do |f|
       .form
         = f.text_field :text, placeholder: '意見を入力してください', value: "", class:  'textbox'

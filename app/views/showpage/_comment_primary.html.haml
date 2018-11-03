@@ -7,12 +7,19 @@
             = @taiketsu.topics.first.topic
           からのご意見
 
-    .comment_block
-      - @comments.each do |comment|
-        .row
-          .columns.large-12
-            %p
-              = comment.text
+    - @comments.each_with_index do |comment, i|
+      - if i % 2 == 0
+        .comment_block.bgc-gray
+          .row
+            .columns.large-12
+              %p
+                = comment.text
+      - else
+        .comment_block.bgc-white
+          .row
+            .columns.large-12
+              %p
+                = comment.text
       .row
         .colums.large-12
     = form_for [@taiketsu,@comment] do |f|
