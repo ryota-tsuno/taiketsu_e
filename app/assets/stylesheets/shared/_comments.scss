@@ -135,6 +135,10 @@ html {
     padding-right: 0.625rem;
     float: left;
   }
+  .column{
+    margin-left: 350px;
+    z-index: 1;
+  }
   .panel>:first-child {
     margin-top: 0;
   }
@@ -225,4 +229,8 @@ p {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.trash_icon{
+  font-size: 32px;
 }

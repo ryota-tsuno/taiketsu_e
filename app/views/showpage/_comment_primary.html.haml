@@ -20,7 +20,7 @@
               %p
                 = comment.text
     = form_for [@taiketsu, @comment] do |f|
-      .form
+      .comment_form
         .form__input
           = f.text_area :text, placeholder: '思いの丈をぶつけてください', value: "", class: 'new_comment', maxlength: "200", size: "50"
           = f.hidden_field :topic_id, value: @topic_first.id

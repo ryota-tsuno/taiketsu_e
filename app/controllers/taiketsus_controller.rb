@@ -1,7 +1,6 @@
 class TaiketsusController < ApplicationController
 
     def index
-      @session = request.session_options[:id]
       @hot_taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(12).order("id")
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
       @taiketsu = Taiketsu.new
@@ -9,6 +8,7 @@ class TaiketsusController < ApplicationController
     end
 
     def show
+      @session = session[:session_id]
       @taiketsus = Taiketsu.new
       @taiketsus.topics.build
 
@@ -26,6 +26,7 @@ class TaiketsusController < ApplicationController
 
     def create
       @taiketsu = Taiketsu.new(taiketsu_params)
+      @taiketsu.session_id = request.session_options[:id]
       if @taiketsu.save
         redirect_to taiketsus_path
       else
