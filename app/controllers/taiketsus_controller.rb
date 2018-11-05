@@ -33,8 +33,8 @@ class TaiketsusController < ApplicationController
       end
     end
 
-    def destory
-      @taiketsu = taiketsu.find(params[:id])
+    def destroy
+      @taiketsu = Taiketsu.find(params[:id])
       @taiketsu.destroy
       redirect_to taiketsus_path
     end

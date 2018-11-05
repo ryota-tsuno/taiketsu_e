@@ -14,5 +14,5 @@
       .row.social
         .columns.large-8.text-left
         .columns.large-4.text-right
-          = link_to taiketsus_
-          このtaiketsuを削除する
+          = link_to taiketsu_path(@taiketsu.id), method: :delete, class: "delete_link" do
+            このtaiketsuを削除する
