@@ -2,7 +2,7 @@
   .main__name--top
     人気のお題
     .main__posts
-      - @taiketsus.each do |taiketsu|
+      - @hot_taiketsus.each do |taiketsu|
         .main__posts--list
           = link_to taiketsu_path(taiketsu.id), class: "link" do
             .main__posts--list__title
@@ -13,5 +13,5 @@
               = taiketsu.topics.second.topic
             .main__posts--list__vote
   .kaminari
-    = paginate @taiketsus
+    = paginate @hot_taiketsus
   = render "shared/looking-opinion"

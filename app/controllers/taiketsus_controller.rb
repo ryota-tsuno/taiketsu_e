@@ -3,7 +3,7 @@ class TaiketsusController < ApplicationController
 
     def index
       @session = request.session_options[:id]
-      @taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(12).order("id")
+      @hot_taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(12).order("id")
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
@@ -12,9 +12,16 @@ class TaiketsusController < ApplicationController
     def show
       @taiketsus = Taiketsu.new
       @taiketsus.topics.build
+
       @taiketsu = Taiketsu.find(params[:id])
+      @taiketsu_topics = @taiketsu.topics
+      @topic_first = @taiketsu_topics.first
+      @topic_second = @taiketsu_topics.second
+
       @comment = Comment.new
-      @comments = Comment.includes(:topic)
+      @comments_first = @topic_first.comments
+      @comments_second = @topic_second.comments
+
       @accepting_taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
     end
 

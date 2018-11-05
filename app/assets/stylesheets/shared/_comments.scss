@@ -17,7 +17,7 @@ html {
     cursor: auto;
   }
   main {
-    padding: 20px 0;
+    padding: 0;
     h3 {
       font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, osaka, 'ＭＳ Ｐゴシック', Arial, sans-serif;
       font-weight: bold;
@@ -146,12 +146,12 @@ html {
     background: white;
     color: $text-bkack-2;
     .comment_block:nth-child(even) {
-      background: $box-child-1;
+      // background: $box-child-1;
     }
     .comment_block {
       margin: 0 -0.875rem -1px;
       padding: 10px 20px;
-      background: white;
+      // background: white;
     }
   }
   .single_comments {
@@ -202,6 +202,13 @@ p {
   line-height: 1.6;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility;
+}
+
+.bgc-gray{
+  background-color: $box-child-1;
+}
+.bgc-white{
+  background-color: white;
 }
 .text-left {
   text-align: left !important;
