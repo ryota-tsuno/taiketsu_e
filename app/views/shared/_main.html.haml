@@ -1,17 +1,20 @@
 .main
   .main__name--top
     人気のお題
-    .main__posts
-      - @hot_taiketsus.each do |taiketsu|
-        .main__posts--list
-          = link_to taiketsu_path(taiketsu.id), class: "link" do
-            .main__posts--list__title
-              = taiketsu.topics.first.topic
-            .VS
-              VS
-            .main__posts--list__title
-              = taiketsu.topics.second.topic
-            .main__posts--list__vote
+
+    - @taiketsus.each_slice(3) do |taiketsus|
+      .main__posts
+        - taiketsus.each do |taiketsu|
+          .main__posts--list
+            = link_to taiketsu_path(taiketsu.id), class: "link" do
+              .main__posts--list__title
+                = taiketsu.topics.first.topic
+              .VS
+                VS
+              .main__posts--list__title
+                = taiketsu.topics.second.topic
+              .main__posts--list__vote
+
   .kaminari
     = paginate @hot_taiketsus
   = render "shared/looking-opinion"
