@@ -1,6 +1,7 @@
 .main
   .main__name--top
     人気のお題
+
     - @taiketsus.each_slice(3) do |taiketsus|
       .main__posts
         - taiketsus.each do |taiketsu|
@@ -14,7 +15,6 @@
                 = taiketsu.topics.second.topic
               .main__posts--list__vote
 
-
   .kaminari
-    = paginate @taiketsus
+    = paginate @hot_taiketsus
   = render "shared/looking-opinion"
