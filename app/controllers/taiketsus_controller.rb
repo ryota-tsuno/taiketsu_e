@@ -1,5 +1,4 @@
 class TaiketsusController < ApplicationController
-  before_action :set_taiketsu, only: [:show]
 
     def index
       @session = request.session_options[:id]
@@ -34,11 +33,13 @@ class TaiketsusController < ApplicationController
       end
     end
 
-  private
-
-    def set_taiketsu
-      @taiketsu = Taiketsu.find(params[:id])
+    def destory
+      @taiketsu = taiketsu.find(params[:id])
+      @taiketsu.destroy
+      redirect_to taiketsus_path
     end
+
+  private
 
     def taiketsu_params
       params.require(:taiketsu).permit(
