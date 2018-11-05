@@ -12,5 +12,8 @@
           .top_article_cast
             = @taiketsu.topics.second.topic
       .row.social
-        .columns.large-8.text-left
-        .columns.large-4.text-right 
+        .column.large-8.text-left
+        .column.large-4.text-right
+          -if @session == @taiketsu.session_id
+            = link_to taiketsu_path(@taiketsu.id), method: :delete, class: "delete_link" do
+              = fa_icon "trash", class: "trash_icon", title: "このtaiketsuを削除する"

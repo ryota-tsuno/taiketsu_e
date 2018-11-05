@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-
+|session_id|string||
 
 ### Association
 - has_many :topics
@@ -26,8 +26,7 @@
 |------|----|-------|
 |comment|text|null: false|
 |topic_id|integer|null: false, foreign_key: true|
-|good_count|integer||
-|bad_count|integer||
+|session_id|string||
 
 ### Association
 - belongs_to :topic
