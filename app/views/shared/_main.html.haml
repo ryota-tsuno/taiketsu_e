@@ -2,17 +2,17 @@
   .main__name--top
     人気のお題
 
-    - @taiketsus.each_slice(3) do |taiketsus|
+    - @hot_taiketsus.each_slice(3) do |hot_taiketsus|
       .main__posts
-        - taiketsus.each do |taiketsu|
+        - hot_taiketsus.each do |hot_taiketsu|
           .main__posts--list
-            = link_to taiketsu_path(taiketsu.id), class: "link" do
+            = link_to taiketsu_path(hot_taiketsu.id), class: "link" do
               .main__posts--list__title
-                = taiketsu.topics.first.topic
+                = hot_taiketsu.topics.first.topic
               .VS
                 VS
               .main__posts--list__title
-                = taiketsu.topics.second.topic
+                = hot_taiketsu.topics.second.topic
               .main__posts--list__vote
 
   .kaminari
