@@ -1,7 +1,29 @@
 class TaiketsusController < ApplicationController
 
     def index
-      @hot_taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(12).order("id")
+      hash = {}
+      keys = []
+      @taiketsus = Taiketsu.all
+      @taiketsus.each do |taiketsu| 
+        comments = taiketsu.topics.joins(:comments).group(:topic_id).count
+        if comments.values[0].blank? && comments.values[1].blank?
+          sum = 0
+        elsif comments.values[0].blank? 
+          sum = comments.values[1]
+        elsif comments.values[1].blank? 
+          sum = comments.values[0]
+        else 
+          sum = comments.values[0] + comments.values[1]
+        end
+        hash[taiketsu.id] = sum
+      end
+      @comment_hash = hash.sort_by {| k, v | v}.reverse
+      @comment_hash.each do |key|
+         keys << key[0]
+      end
+
+      taiketsus_array = keys.map { |id| Taiketsu.find(id) }
+      @hot_taiketsus = Kaminari.paginate_array(taiketsus_array).page(params[:page]).per(12)
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
