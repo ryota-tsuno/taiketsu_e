@@ -22,8 +22,7 @@ class TaiketsusController < ApplicationController
          keys << key[0]
       end
 
-      taiketsus_array = keys.map { |id| Taiketsu.find(id) }
-      @hot_taiketsus = Kaminari.paginate_array(taiketsus_array).page(params[:page]).per(12)
+      @hot_taiketsus = Taiketsu.where(id: keys).order(['field(id, ?)', keys]).page(params[:page]).per(12)
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
