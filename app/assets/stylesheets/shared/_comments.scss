@@ -136,7 +136,7 @@ html {
     float: left;
   }
   .column{
-    margin-left: 350px;
+    margin-left: 375px;
     z-index: 1;
   }
   .panel>:first-child {
@@ -232,5 +232,6 @@ p {
 }
 
 .trash_icon{
+  color: $circle-bg-1;
   font-size: 32px;
 }
