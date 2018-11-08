@@ -49,7 +49,6 @@ class TaiketsusController < ApplicationController
     def create
       @taiketsu = Taiketsu.new(taiketsu_params)
       @taiketsu.session_id = session[:session_id]
-      binding.pry
       if @taiketsu.save
         redirect_to taiketsus_path
       else
