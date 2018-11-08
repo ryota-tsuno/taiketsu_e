@@ -14,6 +14,10 @@
               .main__posts--list__title
                 = hot_taiketsu.topics.second.topic
               .main__posts--list__vote
+                .main__posts--list__vote--left
+                  = hot_taiketsu.topics.first.comments.count
+                .main__posts--list__vote--right
+                  = hot_taiketsu.topics.second.comments.count
 
   .kaminari
     = paginate @hot_taiketsus
