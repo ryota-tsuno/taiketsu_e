@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20181105111519) do
   create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "topic",       null: false
     t.integer  "taiketsu_id", null: false
+    t.string   "session_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
