@@ -12,4 +12,8 @@
           .main__posts--list__title
             = accepting_taiketsu.topics.second.topic
           .main__posts--list__vote
-            28点 / 24点
+            .main__posts--list__vote--left
+              = accepting_taiketsu.topics.first.comments.count
+            .main__posts--list__vote--right
+              = accepting_taiketsu.topics.second.comments.count
+

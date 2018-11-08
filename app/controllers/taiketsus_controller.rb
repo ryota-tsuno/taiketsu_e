@@ -4,15 +4,15 @@ class TaiketsusController < ApplicationController
       hash = {}
       keys = []
       @taiketsus = Taiketsu.all
-      @taiketsus.each do |taiketsu| 
+      @taiketsus.each do |taiketsu|
         comments = taiketsu.topics.joins(:comments).group(:topic_id).count
         if comments.values[0].blank? && comments.values[1].blank?
           sum = 0
-        elsif comments.values[0].blank? 
+        elsif comments.values[0].blank?
           sum = comments.values[1]
-        elsif comments.values[1].blank? 
+        elsif comments.values[1].blank?
           sum = comments.values[0]
-        else 
+        else
           sum = comments.values[0] + comments.values[1]
         end
         hash[taiketsu.id] = sum
@@ -47,7 +47,7 @@ class TaiketsusController < ApplicationController
 
     def create
       @taiketsu = Taiketsu.new(taiketsu_params)
-      @taiketsu.session_id = request.session_options[:id]
+      @taiketsu.session_id = session[:session_id]
       if @taiketsu.save
         redirect_to taiketsus_path
       else
