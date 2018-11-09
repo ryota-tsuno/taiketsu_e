@@ -1,8 +1,28 @@
 class TaiketsusController < ApplicationController
-    before_action :set_taiketsu, only: [:index, :show]
 
     def index
-      @hot_taiketsus = Taiketsu.where(id: @keys).order(['field(id, ?)', @keys]).page(params[:page]).per(12)
+      hash = {}
+      keys = []
+      @taiketsus = Taiketsu.all
+      @taiketsus.each do |taiketsu|
+        comments = taiketsu.topics.joins(:comments).group(:topic_id).count
+        if comments.values[0].blank? && comments.values[1].blank?
+          sum = 0
+        elsif comments.values[0].blank?
+          sum = comments.values[1]
+        elsif comments.values[1].blank?
+          sum = comments.values[0]
+        else
+          sum = comments.values[0] + comments.values[1]
+        end
+        hash[taiketsu.id] = sum
+      end
+      @comment_hash = hash.sort_by {| k, v | v}.reverse
+      @comment_hash.each do |key|
+         keys << key[0]
+      end
+
+      @hot_taiketsus = Taiketsu.where(id: keys).order(['field(id, ?)', keys]).page(params[:page]).per(12)
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
 
       @random = Taiketsu.offset( rand(Taiketsu.count) ).first
@@ -25,7 +45,6 @@ class TaiketsusController < ApplicationController
       @comments_first = @topic_first.comments
       @comments_second = @topic_second.comments
 
-      @show_taiketsus = Taiketsu.where(id: @keys).order(['field(id, ?)', @keys]).page(params[:page]).per(1)
       @accepting_taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
     end
 
@@ -51,7 +70,6 @@ class TaiketsusController < ApplicationController
       params.require(:taiketsu).permit(
         topics_attributes: [:topic]
       )
-      end
     end
-    
+
 end
