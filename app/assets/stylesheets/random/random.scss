@@ -3,25 +3,25 @@
 
   .ran-button{
     float: right;
-    padding: 8px;
+    width: 60px;
+    height: 60px;
     z-index: 1;
     position: absolute;
     position: fixed;
     left: 1300px;
     top: 275px;
-    border: 1px groove black;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-
+    border-radius: 5px;
+    background-color: skyblue;
+    padding: 4px 0 0 4px;
     .heart_icon{
-      font-size: 24px;
+      font-size: 56px;
       color: #f7f7f7;
     }
   }
 
   .ran-button :hover{
     color: #ffbb00;
-    font-size: 10800px;
+    cursor: pointer;
   }
 
 }
