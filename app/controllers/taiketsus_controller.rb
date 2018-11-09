@@ -21,7 +21,8 @@ class TaiketsusController < ApplicationController
       @comment_hash.each do |key|
          keys << key[0]
       end
-      @hot_taiketsus = Taiketsu.where(id: @keys).order(['field(id, ?)', @keys]).page(params[:page]).per(12)
+
+      @hot_taiketsus = Taiketsu.where(id: keys).order(['field(id, ?)', keys]).page(params[:page]).per(12)
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
 
       @random = Taiketsu.offset( rand(Taiketsu.count) ).first
@@ -43,6 +44,7 @@ class TaiketsusController < ApplicationController
       @comment = Comment.new
       @comments_first = @topic_first.comments
       @comments_second = @topic_second.comments
+
       @accepting_taiketsus = Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
     end
 
@@ -69,4 +71,5 @@ class TaiketsusController < ApplicationController
         topics_attributes: [:topic]
       )
     end
+
 end
