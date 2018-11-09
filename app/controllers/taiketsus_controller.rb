@@ -24,6 +24,9 @@ class TaiketsusController < ApplicationController
 
       @hot_taiketsus = Taiketsu.where(id: keys).order(['field(id, ?)', keys]).page(params[:page]).per(12)
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
+
+      @random = Taiketsu.offset( rand(Taiketsu.count) ).first
+
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
     end

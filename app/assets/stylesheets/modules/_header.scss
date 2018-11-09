@@ -3,6 +3,7 @@
     width: 100%;
     background: image-url("tyuusyou.jpg");
     background-size: cover;
+    z-index: 3;
     &__top {
         padding: 80px 0 100px;
         &--name {
