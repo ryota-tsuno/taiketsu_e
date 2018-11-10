@@ -50,6 +50,7 @@ class TaiketsusController < ApplicationController
 
     def create
       @taiketsu = Taiketsu.new(taiketsu_params)
+      session[:expires_at] = 1.day.from_now
       @taiketsu.session_id = session[:session_id]
       if @taiketsu.save
         redirect_to taiketsus_path
