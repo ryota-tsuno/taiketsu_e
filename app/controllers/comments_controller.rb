@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
 
     def create
-        @comment = Comment.new(text: comment_params[:text], topic_id: comment_params[:topic_id], session_id: request.session_options[:id])
+        @comment = Comment.new(text: comment_params[:text], topic_id: comment_params[:topic_id])
+        @comment.session_id = session[:session_id]
         if @comment.save
           respond_to do |format|
             format.html { redirect_to taiketsu_path(params[:taiketsu_id]) }
