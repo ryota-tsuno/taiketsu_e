@@ -1,10 +1,11 @@
 .row.adjustlink
   .columns.large-6.small-12.text-left
-    = link_to "https://taiketsu.co/151/", title:"次の投稿へ" do
-      .fa.fa-arrow-circle-left
-      高知 vs 東京
-
+    - if @prev != 0
+      = link_to taiketsu_path(@prev) do
+        .fa.fa-arrow-circle-left
+        より人気のお題へ 
   .columns.large-6.small-12.text-right
-    = link_to "https://taiketsu.co/151/", title:"過古の投稿へ" do
-      .fa.fa-arrow-circle-right
-      トヨタ好き vs トヨタ嫌い
+    - if @next != 0
+      = link_to taiketsu_path(@next) do
+        .fa.fa-arrow-circle-right
+        より不人気なお題へ
