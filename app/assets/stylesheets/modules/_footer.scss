@@ -25,6 +25,10 @@
             input {
                 color: $white;
                 font-size:12px;
+                outline: none;
+                padding-left: 5px;
+                border-style: solid;
+                border-width: 1px;
             }
             // 入力テキストを白色に
             &__text {
