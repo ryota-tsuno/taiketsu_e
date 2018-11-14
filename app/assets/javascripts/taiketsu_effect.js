@@ -15,9 +15,13 @@ $(function (){
         $('.header, .footer').css({
             'background-image' : 'url(./images/giphy.gif)',
         });
+        $('.header').css({
+            'height' : '600px'
+        })
         $('.main').css({
             'background-image' : 'url(./images/boxing.jpg)',
             'background-repeat' : 'none',
+            'background-size' : 'cover'
         })
         $('.header__middle--button').prepend("<img src = './images/jhonson.png' width = '200' height = '300'>");
         $('.header__middle--button').append("<img src = './images/resura.png' width = '200' height = '300'>");
