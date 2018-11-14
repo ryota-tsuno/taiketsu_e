@@ -1,8 +1,8 @@
 $(function() {
   $('.show-main__bgc').each(function(index, element) {
     // それぞれのトピックに対するコメント数を取得
-    var left_c = $(this).find('.left-bg').attr('data_count');
-    var right_c = $(this).find('.right-bg').attr('data_count');
+    var left_c = $(this).find('.left-count').text();
+    var right_c = $(this).find('.right-count').text();
     // 文字列を数値に変換
     var left = parseInt(left_c);
     var right = parseInt(right_c);

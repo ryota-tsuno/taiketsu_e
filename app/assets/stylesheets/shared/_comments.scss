@@ -81,14 +81,12 @@ html {
   }
   .text-left {
     text-align: left !important;
-    background-color: #f7f7f7;
   }
   .text-center {
     text-align: center !important;
   }
   .text-right {
     text-align: right !important;
-    background-color: #f7f7f7;
   }
   .top_article .panel>.row {
     padding-top: 20px;
@@ -225,6 +223,7 @@ p {
 }
 
 .fa {
+  color: white;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
