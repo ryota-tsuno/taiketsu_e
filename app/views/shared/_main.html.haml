@@ -23,3 +23,30 @@
   .kaminari
     = paginate @hot_taiketsus
   = render "shared/looking-opinion"
+
+  .ran-button#openModal{ :title => "おすすめ" }
+    = fa_icon "star", class: "heart_icon"
+
+/* モーダルウィンドウ */
+%section#modalArea.modalArea
+  #modalBg.modalBg
+    .modalWrapper
+      .random__subject
+        .random__subject-title
+          おすすめのタイケツ
+        / #closeModel.closeModel
+        /   ×
+      .random__main__posts--list
+        = link_to taiketsu_path(@random.id), class: "link" do
+          .random__main__posts--list__title.bgc-red
+            .random__topic
+              = @random.topics.first.topic
+          .random__vs
+            VS
+          .random__main__posts--list__title.bgc-blue
+            .random__topic
+              = @random.topics.second.topic
+      .random__footer
+        さっそく 「 タイケツ 」 してみよう！！
+
+/ %script{:type => "text/javascript", :src => "//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
