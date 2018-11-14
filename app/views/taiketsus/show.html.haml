@@ -1,6 +1,13 @@
 %html
   %body
     %main
+      .show-main__bgc
+        .left-bg
+          .left-count{:hidden => ""}
+            = @topic_first.comments.count
+        .right-bg
+          .right-count{:hidden => ""}
+            = @topic_second.comments.count
       = render 'showpage/header'
       = render 'showpage/adjustlink'
       = render 'showpage/top_article'
