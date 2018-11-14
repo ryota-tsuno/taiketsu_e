@@ -1,12 +1,11 @@
 $(function(){
-  var $target = $('.main__posts--list');
   var navy = '#1f3748';
   var white = 'white';
   var black = 'black';
   var speed = 150;
   var easing = 'linear';
 
-  $target.on("mouseover", function(){
+  $(document).on("mouseover", '.main__posts--list', function(){
       $(this).stop().animate({
         backgroundColor: navy
       }, speed, easing);
@@ -15,9 +14,10 @@ $(function(){
       }, speed, easing);
       $(this).find('.VS').stop().animate({
         backgroundColor: white,
-        color: navy
+        color: navy,
       }, speed, easing);
-  }).on("mouseout", function(){
+      $(this).find('.VS').css('font-weight', 'bold');
+  }).on("mouseout", '.main__posts--list',function(){
       $(this).stop().animate({
         backgroundColor: white
       }, speed, easing);
@@ -28,5 +28,6 @@ $(function(){
         backgroundColor: navy,
         color: white
       }, speed, easing);
+      $(this).find('.VS').css('font-weight', 'normal');
     });
 });

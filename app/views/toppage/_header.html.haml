@@ -1,22 +1,34 @@
 .header
-    .header__top
-        %h1.header__top--name
-            = link_to "タイケツ", root_path, class: "toppage"
-    .header__middle
-        %p.header__middle--sentence
-            いつも宿敵、ライバルとして憎み合い、争い合う二人。
-            %br/
-            たまには言いたいことを遠慮なく吐き出してみませんか？
-        %p.header__middle--button
-            = link_to "もっと詳しく", abouts_path, class: "btn"
-    .header__bottom
-        %ul.header__bottom--links
-            %li.list
-                = link_to "https://www.facebook.com/", target: "_blank" do
-                    = fa_icon "facebook", class: "icon"
-            %li.list
-                = link_to "https://twitter.com/", target: "_blank" do
-                    = fa_icon "twitter", class: "icon"
-            %li.list
-                = link_to "http://b.hatena.ne.jp/", target: "_blank" do
-                    = fa_icon "bold", class: "icon"
+  .header__top
+    %h1.header__top--name
+      = link_to "タイケツ", root_path, class: "toppage"
+  .header__middle
+    %p.header__middle--sentence
+      いつも宿敵、ライバルとして憎み合い、争い合う二人。
+      %br/
+      たまには言いたいことを遠慮なく吐き出してみませんか？
+    %ul.header__middle--button 
+      %li.header__middle--button__list
+        = link_to "もっと詳しく", abouts_path, class: "btn"
+      %li.header__middle--button__list
+        %input.btn1{type: "button", value: "タイケツモード"} 
+
+  .header__bottom1
+    %ul.header__bottom--links
+      %li.list
+        = link_to "https://www.facebook.com/", target: "_blank" do
+          = fa_icon "facebook", class: "icon"
+      %li.list
+        = link_to "https://twitter.com/", target: "_blank" do
+          = fa_icon "twitter", class: "icon"
+      %li.list
+        = link_to "http://b.hatena.ne.jp/", target: "_blank" do
+          = fa_icon "bold", class: "icon"
+
+  .header__search
+    .header__search--title
+      お題を検索する
+    .header__search--form
+      %input#topic-search-field.form__input{:type => "text"}/
+      .icon
+        %i.fa.fa-search{class: "search_icon", "aria-hidden" => "true"}

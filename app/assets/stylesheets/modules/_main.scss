@@ -9,6 +9,9 @@
         padding: 30px 0 20px;
         font-size: 21px;
         height: 100px;
+        .popular_title {
+            padding-bottom: 20px;
+        }
     }
     &__posts {
         margin: 0 auto;
@@ -22,12 +25,9 @@
             min-height: 180px;
             min-width: 230px;
             background-color: $white;
-            // border: 1px solid #ccc;
             text-align: center;
             float: left;
-            // box-shadow: 0px 0px 3px;
             box-shadow: 0 3px 5px #cccccc;
-            // border: 1px solid $white;
             border: none;
             .link {
                 text-decoration: none;
