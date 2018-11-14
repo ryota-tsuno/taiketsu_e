@@ -2,6 +2,28 @@ class TaiketsusController < ApplicationController
     before_action :set_taiketsu, only: [:index, :show]
 
     def index
+# 初期表示
+      hash = {}
+      keys = []
+      @taiketsus = Taiketsu.all
+      @taiketsus.each do |taiketsu|
+        comments = taiketsu.topics.joins(:comments).group(:topic_id).count
+        if comments.values[0].blank? && comments.values[1].blank?
+          sum = 0
+        elsif comments.values[0].blank?
+          sum = comments.values[1]
+        elsif comments.values[1].blank?
+          sum = comments.values[0]
+        else
+          sum = comments.values[0] + comments.values[1]
+        end
+        hash[taiketsu.id] = sum
+      end
+      @comment_hash = hash.sort_by {| k, v | v}.reverse
+      @comment_hash.each do |key|
+         keys << key[0]
+      end
+
       @hot_taiketsus = Taiketsu.where(id: @keys).order(['field(id, ?)', @keys]).page(params[:page]).per(12)
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
 
@@ -9,6 +31,28 @@ class TaiketsusController < ApplicationController
 
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
+
+# インクリメンタルサーチ
+      # topicを検索
+      @topics = Topic.where('topic LIKE(?)', "%#{params[:keyword]}%")
+      # 配列を作成
+      taiketsu_id_array = []
+      @array = []
+      # 検索したtopicのtaiketsu_idを配列に入れる
+      @topics.each do |topic|
+        taiketsu_id_array << topic.taiketsu_id
+      end
+      # 被ったtaiketsu_idを排除
+      taiketsu_id_array.uniq!
+      # taiketsu_idからtaiketsuレコードを取得し配列に入れる
+      taiketsu_id_array.each do |taiketsu_id|
+        search_taiketsu = Taiketsu.find(taiketsu_id)
+        @array << search_taiketsu
+      end
+      respond_to do |format|
+        format.html
+        format.json
+      end
     end
 
     def show
@@ -31,6 +75,7 @@ class TaiketsusController < ApplicationController
 
     def create
       @taiketsu = Taiketsu.new(taiketsu_params)
+      session[:expires_at] = 1.day.from_now
       @taiketsu.session_id = session[:session_id]
       if @taiketsu.save
         redirect_to taiketsus_path

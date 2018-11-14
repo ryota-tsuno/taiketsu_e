@@ -24,3 +24,11 @@
       %li.list
         = link_to "http://b.hatena.ne.jp/", target: "_blank" do
           = fa_icon "bold", class: "icon"
+
+  .header__search
+    .header__search--title
+      お題を検索する
+    .header__search--form
+      %input#topic-search-field.form__input{:type => "text"}/
+      .icon
+        %i.fa.fa-search{class: "search_icon", "aria-hidden" => "true"}

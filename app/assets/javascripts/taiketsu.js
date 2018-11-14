@@ -1,12 +1,11 @@
 $(function(){
-  var $target = $('.main__posts--list');
   var navy = '#1f3748';
   var white = 'white';
   var black = 'black';
   var speed = 150;
   var easing = 'linear';
 
-  $target.on("mouseover", function(){
+  $(document).on("mouseover", '.main__posts--list', function(){
       $(this).stop().animate({
         backgroundColor: navy
       }, speed, easing);
@@ -17,7 +16,7 @@ $(function(){
         backgroundColor: white,
         color: navy
       }, speed, easing);
-  }).on("mouseout", function(){
+  }).on("mouseout", '.main__posts--list',function(){
       $(this).stop().animate({
         backgroundColor: white
       }, speed, easing);
