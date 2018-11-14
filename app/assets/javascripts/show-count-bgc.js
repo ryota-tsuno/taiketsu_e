@@ -8,9 +8,6 @@ $(function() {
     var right = parseInt(right_c);
     // コメントの総数を取得
     var total = left + right;
-    console.log(left);
-    console.log(right);
-    console.log(total);
 
     // コメントがどちらも０件でない時
     if (left !== 0 && right !== 0) {
