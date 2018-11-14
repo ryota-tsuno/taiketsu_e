@@ -1,5 +1,5 @@
 .header {
-    height: 570px;
+    height: 700px;
     width: 100%;
     background: image-url("tyuusyou.jpg");
     background-size: cover;
@@ -90,6 +90,39 @@
                     font-size: 20px;
                     cursor: pointer;
                 }
+            }
+        }
+    }
+    &__search {
+        margin-top: 15px;
+        text-align: center;
+        color: $white;
+        &--title {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        &--form {
+            margin: 0 auto;
+            display: inline-block;
+            position: relative;
+            .form__input {
+                background: none;
+                color: $white;
+                height: 30px;
+                width: 350px;
+                outline: none;
+                padding-left: 30px;
+                border-style: solid;
+                border-width: 1px;
+                font-family: FontAwesome;
+                font-style: normal;
+                font-weight: normal;
+                text-decoration: inherit;
+            }
+            .icon {
+                position: absolute;
+                left: 10px;
+                top: 4px;
             }
         }
     }
