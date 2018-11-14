@@ -1,6 +1,7 @@
 class TaiketsusController < ApplicationController
 
     def index
+# 初期表示
       hash = {}
       keys = []
       @taiketsus = Taiketsu.all
@@ -26,6 +27,28 @@ class TaiketsusController < ApplicationController
       @accepting_taiketsus= Taiketsu.includes(:topics).page(params[:page]).per(6).order("created_at DESC")
       @taiketsu = Taiketsu.new
       @taiketsu.topics.build
+
+# インクリメンタルサーチ
+      # topicを検索
+      @topics = Topic.where('topic LIKE(?)', "%#{params[:keyword]}%")
+      # 配列を作成
+      taiketsu_id_array = []
+      @array = []
+      # 検索したtopicのtaiketsu_idを配列に入れる
+      @topics.each do |topic|
+        taiketsu_id_array << topic.taiketsu_id
+      end
+      # 被ったtaiketsu_idを排除
+      taiketsu_id_array.uniq!
+      # taiketsu_idからtaiketsuレコードを取得し配列に入れる
+      taiketsu_id_array.each do |taiketsu_id|
+        search_taiketsu = Taiketsu.find(taiketsu_id)
+        @array << search_taiketsu
+      end
+      respond_to do |format|
+        format.html
+        format.json
+      end
     end
 
     def show
