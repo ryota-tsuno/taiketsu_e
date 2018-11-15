@@ -237,3 +237,21 @@ p {
   color: $circle-bg-1;
   font-size: 32px;
 }
+
+.large-12 {
+  position: relative;
+  .scroll {
+    position: absolute;
+    right: 7px;
+    top: 0px;
+    .icon-left,
+    .icon-right {
+      font-size: 30px;
+      color: #dedede;
+    }
+    .icon-left:hover,
+    .icon-right:hover {
+      color: #C0C0C0;
+    }
+  }
+}
