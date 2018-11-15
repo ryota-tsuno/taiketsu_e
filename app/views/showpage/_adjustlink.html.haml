@@ -4,8 +4,10 @@
       = link_to taiketsu_path(@prev) do
         = fa_icon "arrow-circle-left", class: "fa-arrow"
         より人気のお題へ 
+        
   .columns.large-6.small-12.text-right
     - if @next != 0
       = link_to taiketsu_path(@next) do
         より不人気なお題へ
         = fa_icon "arrow-circle-right", class: "fa-arrow"
+

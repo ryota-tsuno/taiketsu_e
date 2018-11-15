@@ -5,11 +5,11 @@
     background-size: cover;
     &__name {
         line-height: 80px;
-        padding: 20px 0 25px 300px;
+        padding: 20px 0 0 300px;
         .toppage {
             height: 40px;
             width: 300px;
-            background-image: image-url("taiketsu1.jpg");
+            background-image: image-url("taiketsu_mini.png");
             background-repeat: no-repeat;
             color: $white;
             display: block;

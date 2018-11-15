@@ -14,8 +14,9 @@ $(function(){
       }, speed, easing);
       $(this).find('.VS').stop().animate({
         backgroundColor: white,
-        color: navy
+        color: navy,
       }, speed, easing);
+      $(this).find('.VS').css('font-weight', 'bold');
   }).on("mouseout", '.main__posts--list',function(){
       $(this).stop().animate({
         backgroundColor: white
@@ -27,5 +28,6 @@ $(function(){
         backgroundColor: navy,
         color: white
       }, speed, easing);
+      $(this).find('.VS').css('font-weight', 'normal');
     });
 });

@@ -125,8 +125,9 @@ html {
   .large-12 {
     width: 100%;
   }
-  small {
-    font-size: 60%;
+  .small {
+    color: white;
+    font-size: 90%;
     line-height: inherit;
   }
   .columns {
@@ -223,6 +224,7 @@ p {
 }
 
 .fa-arrow {
+  color: white;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -234,4 +236,22 @@ p {
 .trash_icon{
   color: $circle-bg-1;
   font-size: 32px;
+}
+
+.large-12 {
+  position: relative;
+  .scroll {
+    position: absolute;
+    right: 7px;
+    top: 0px;
+    .icon-left,
+    .icon-right {
+      font-size: 30px;
+      color: #dedede;
+    }
+    .icon-left:hover,
+    .icon-right:hover {
+      color: #C0C0C0;
+    }
+  }
 }

@@ -9,6 +9,9 @@
         padding: 30px 0 20px;
         font-size: 21px;
         height: 100px;
+        .popular_title {
+            padding-bottom: 20px;
+        }
     }
     &__posts {
         margin: 0 auto;
@@ -75,6 +78,7 @@
         clear: both;
     }
     &__name--bottom {
+        color: white;
         text-align: center;
         padding: 10px 0 20px;
         font-size: 21px;
