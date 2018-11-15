@@ -1,6 +1,10 @@
 .main__name--bottom
-  .wanted_title
-    ご意見募集中のお題
+  - if (@url == "/taiketsus\/\d+\/")
+    .wanted_title.color-w
+      ご意見募集中のお題
+  - else
+    .wanted_title
+      ご意見募集中のお題
 - @accepting_taiketsus.each_slice(3) do |accepting_taiketsus|
   .main__posts
     - accepting_taiketsus.each do |accepting_taiketsu|

@@ -15,9 +15,5 @@
                             VS
             .footer__form--btn
                 = f.submit "投稿する", class: "btn"
-            - if (@url == "/taiketsus\/\d+\/" )
-                .footer__form--sentence.color-w
-                    ＊投稿できるお題は各50文字以内ですよ
-            -else
-                .footer__form--sentence
-                    ＊投稿できるお題は各50文字以内ですよ
+            .footer__form--sentence
+                ＊投稿できるお題は各50文字以内ですよ
