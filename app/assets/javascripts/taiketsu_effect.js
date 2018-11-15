@@ -16,7 +16,7 @@ $(function (){
             'background-image' : 'url(./images/giphy.gif)',
         });
         $('.header').css({
-            'height' : '600px'
+            'height' : '630px'
         })
         $('.main').css({
             'background-image' : 'url(./images/boxing.jpg)',
