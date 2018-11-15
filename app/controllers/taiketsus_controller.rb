@@ -56,6 +56,7 @@ class TaiketsusController < ApplicationController
     end
 
     def show
+      @url = request.url
       @session = session[:session_id]
       @taiketsus = Taiketsu.new
       @taiketsus.topics.build
@@ -129,14 +130,14 @@ class TaiketsusController < ApplicationController
             @prev = @comment_arrays[index-1][0]
             @next = 0
           # それ以外
-          else 
+          else
             @prev = @comment_arrays[index-1][0]
             @next = @comment_arrays[index+1][0]
           end
         end
         @keys << array[0]
       end
-      
+
     end
-    
+
 end
