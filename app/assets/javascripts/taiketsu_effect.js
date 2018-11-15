@@ -8,6 +8,8 @@ $(function (){
             'background-color' : taiketsu_red,
             'color' : taiketsu_yellow,
         })
+        // .btn1がクリックされたらセッション登録
+        window.sessionStorage.setItem(['taiketsu_session'],["taiketsu"]);
         $('.btn').css({
             'background-color' : taiketsu_red,
             'color' : taiketsu_yellow
@@ -23,10 +25,10 @@ $(function (){
             'background-repeat' : 'none',
             'background-size' : 'cover'
         })
-        $('.header__middle--button').prepend("<img src = './images/jhonson.png' width = '200' height = '300'>");
-        $('.header__middle--button').append("<img src = './images/resura.png' width = '200' height = '300'>");
+        $('.header__middle--button').prepend("<img src = './images/jhonson.png' width = 250' height = '300'>");
+        $('.header__middle--button').append("<img src = './images/resura.png' width = '250' height = '300'>");
         $('.header__middle--button').css({
-            'width' : '600px',
+            'width' : '700px',
         })
         $('.header__middle--sentence').css({
             'color' : taiketsu_red,
@@ -49,4 +51,8 @@ $(function (){
             'text-shadow' : '8px 5px 5px #220000'
         });
     });
+
+    $('.fa-arrow').on('click', function(){
+        window.sessionStorage.setItem(['taiketsu_session'],["taiketsu"]);
+    })
 })
