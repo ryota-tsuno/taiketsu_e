@@ -13,17 +13,21 @@ $(function() {
     if (left !== 0 && right !== 0) {
       $(this).find('.left-bg').css('width', `${ left / total * 100 }%`);
       $(this).find('.right-bg').css('width', `${ right / total * 100 }%`);
+      $('.main__name--bottom').find('.wanted_title').css('color', 'white');
     // コメントがどちらも０件の時
     } else if (left == 0 && right == 0) {
+      $('.main__name--bottom').find('.wanted_title').css('color', 'white');
       // 処理なし
     // 左のトピックに対するコメントが０件の時
     } else if (left == 0){
       $(this).find('.left-bg').css('display', 'none');
       $(this).find('.right-bg').css('width', '100%');
+      $('.main__name--bottom').find('.wanted_title').css('color', 'white');
     // 右のトピックに対するコメントが０件の時
     } else {
       $(this).find('.left-bg').css('width', '100%');
       $(this).find('.right-bg').css('display', 'none');
+      $('.main__name--bottom').find('.wanted_title').css('color', 'white');
     };
   });
 });
