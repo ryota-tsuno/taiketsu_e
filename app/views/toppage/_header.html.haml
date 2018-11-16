@@ -11,7 +11,7 @@
       %li.header__middle--button__list
         = link_to "もっと詳しく", abouts_path, class: "btn"
       %li.header__middle--button__list
-        %input.btn1{type: "button", value: "タイケツモード"} 
+        %input.btn1{type: "button", value: "タイケツモード"}
 
   .header__bottom1
     %ul.header__bottom--links
@@ -29,6 +29,6 @@
     .header__search--title
       お題を検索する
     .header__search--form
-      %input#topic-search-field.form__input{:type => "text"}/
+      %input#topic-search-field.search__input{:type => "text"}/
       .icon
         %i.fa.fa-search{class: "search_icon", "aria-hidden" => "true"}

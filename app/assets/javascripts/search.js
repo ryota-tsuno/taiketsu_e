@@ -28,7 +28,7 @@ function appendTopic(taiketsu) {
 }
 
 function appendNoTopic(taiketsu) {
-  var html = `<div class="main__posts--list" style="font-size:17px; line-height: 160px;">
+  var html = `<div style="font-size:17px; line-height: 160px;">
                 ${ taiketsu }
               </div>`
     search_panel.append(html);
@@ -64,8 +64,8 @@ function countComments() {
   });
 }
 
-  $('.form__input').on('keyup', function() {
-    var input = $('.form__input').val();
+  $('.search__input').on('keyup', function() {
+    var input = $('.search__input').val();
     if (input == '') {
       $('.main__posts').empty();
     }
@@ -85,6 +85,7 @@ function countComments() {
             appendTopic(taiketsu);
             $('.wanted_title').text('')
             $('.popular_title').text('検索結果')
+            $('.kaminari').text('')
             countComments();
           });
         }
