@@ -1,10 +1,17 @@
 .comment_form{
   padding-top: 20px;
-  textarea{
-    max-width: 100%;
-    height: 100px;
-    resize: vertical;
-    border: 1px solid #dedede;
+  .form__input{
+    textarea{
+      max-width: 100%;
+      height: 100px;
+      resize: vertical;
+      border: 1px solid #dedede;
+      outline: none;
+      border-style: solid;
+    }
+    textarea:focus{
+      box-shadow: 0 0 2px 0 rgba(153,153,153,1);
+    }
   }
 
   .form__submit{
