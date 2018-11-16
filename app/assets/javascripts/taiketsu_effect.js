@@ -40,7 +40,7 @@ $(function (){
             'color' : 'black',
             'border' : 'solid 1px black',
         });
-        $('.popular_title, .main__name--bottom').css({
+        $('.popular_title, .wanted_title').css({
             'color' : taiketsu_red,
             'font-weight' : 'bold', 
             'text-shadow' : '8px 5px 5px #220000'
