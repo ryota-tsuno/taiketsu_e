@@ -3,25 +3,30 @@
 
   .ran-button{
     float: right;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     z-index: 1;
     position: absolute;
     position: fixed;
     left: 90%;
     top: 40%;
-    border-radius: 5px;
+    border-radius: 50%;
     background-color: skyblue;
     padding: 4px 0 0 4px;
-    .heart_icon{
-      font-size: 56px;
+    .ran-text{
+      position: absolute;
+      top: 20px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 20px;
       color: #f7f7f7;
     }
   }
 
   .ran-button :hover{
-    color: #ffbb00;
+    color: yellow;
     cursor: pointer;
+    -webkit-rotate:
   }
 
 }
