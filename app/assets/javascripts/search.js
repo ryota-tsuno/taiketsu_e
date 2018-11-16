@@ -85,7 +85,7 @@ function countComments() {
             appendTopic(taiketsu);
             $('.wanted_title').text('')
             $('.popular_title').text('検索結果')
-            $('.kaminari').text('')
+            $('.kaminari').remove('')
             countComments();
           });
         }
@@ -93,6 +93,7 @@ function countComments() {
           appendNoTopic("一致するお題はありません");
           $('.wanted_title').text('')
           $('.popular_title').text('検索結果')
+          $('.kaminari').remove('')
         }
       })
       .fail(function() {
