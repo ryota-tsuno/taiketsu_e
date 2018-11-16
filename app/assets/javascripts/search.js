@@ -28,7 +28,7 @@ function appendTopic(taiketsu) {
 }
 
 function appendNoTopic(taiketsu) {
-  var html = `<div class="main__posts--list" style="font-size:17px; line-height: 160px;">
+  var html = `<div style="font-size:17px; line-height: 160px;">
                 ${ taiketsu }
               </div>`
     search_panel.append(html);
